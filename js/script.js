@@ -8,9 +8,16 @@ if(playerInput == '1'){
   playerMove = 'kamień';
 }
 else if(playerInput == '2'){
-	playerMove = 'papier'
+	playerMove = 'papier';
 }
 else if(playerInput == '3'){
-	playerMove = 'nożyce'
+	playerMove = 'nożyce';
+}
+else {
+	playerMove = 'nieznany ruch';
 }
 printMessage('Twój ruch to: ' + playerMove);
+
+if( computerMove =='kamień' && playerMove == 'papier'){
+	printMessage('Ty wygrywasz!');
+}
