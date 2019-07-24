@@ -9,11 +9,35 @@
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
+  position: relative;
 }
 
 .buttons .button {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background-color: yellow;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+body {
+  background-color: gray;
+}
+
+span {
+  color: #474747;
+  font-size: 26px;
+  text-align: center;
+}
+
+.title {
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+}
+
+.fas {
+  background-color: bisque;
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

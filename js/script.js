@@ -1,4 +1,4 @@
-// let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+// let playerMove = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 const scissors = document.getElementById('scissors');
 const paper = document.getElementById('paper');
@@ -35,36 +35,33 @@ function determineComputerMove() {
 			return 'paper';
 		case 3:
 			return 'stone';
-
 	}
 }
+function displayResult(computerMove, playerMove) {
+	console.log(computerMove, playerMove);
 if (computerMove == 'stone' && playerMove == 'paper') {
-	printMessage('You are winner!')
+	printMessage('You are winner!');
+} else if (computerMove == 'paper' && playerMove == 'paper') {
+	printMessage('The dead-heat. Try again');
+} else if (computerMove == 'scissors' && playerMove == 'paper') {
+	printMessage('You lost.');
+} else if (computerMove == 'stone' && playerMove == 'scissors') {
+	printMessage('You lost.');
+} else if (computerMove == 'stone' && playerMove == 'stone') {
+	printMessage('The dead-heat. Try again');
+} else if (computerMove == 'paper' && playerMove == 'scissors'){
+	printMessage('You are winner!');
+} else if (computerMove == 'paper' && playerMove == 'stone') {
+	printMessage('You lost.');
+} else if (computerMove == 'scissors' && playerMove == 'scissors') {
+	printMessage('The dead-heat. Try again');
+} else if (computerMove == 'scissors' && playerMove == 'stone') {
+	printMessage('You are winner!');
+} else { 
+	printMessage('Unknown move');
 }
-else if (computerMove == 'paper' && playerMove == 'paper') {
-	printMessage('The dead-heat. Try again')
+
+return playerMove;
 }
-else if (computerMove == 'scissors' && playerMove == 'paper') {
-	printMessage('You lost.')
-}
-else if (computerMove == 'stone' && playerMove == 'scissors') {
-	printMessage('You lost.')
-}
-else if (computerMove == 'stone' && playerMove == 'stone') {
-	printMessage('The dead-heat. Try again')
-}
-else if (computerMove == 'paper' && playerMove == 'scissors'){
-	printMessage('You are winner!')
-}
-else if (computerMove == 'paper' && playerMove == 'stone') {
-	printMessage('You lost.')
-}
-else if (computerMove == 'scissors' && playerMove == 'scissors') {
-	printMessage('The dead-heat. Try again')
-}
-else if (computerMove == 'scissors' && playerMove == 'stone') {
-	printMessage('You are winner!')
-}
-else { 
-	printMessage('Unknown move')
-}
+
+
