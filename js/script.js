@@ -1,3 +1,4 @@
+{
 const scissors = document.getElementById('scissors');
 const paper = document.getElementById('paper');
 const stone = document.getElementById('stone');
@@ -32,7 +33,6 @@ function determineComputerMove() {
 			return 'paper';
 		case 3:
 			return 'stone';
-
 	}
 }
 
@@ -40,25 +40,27 @@ function result(userMove, computerMove) {
 	console.log(userMove, computerMove);
 	switch (userMove) {
 		case 'scissors':
-			if (computerMove === 'scissors') {
-				return 'draw';
-			}
-			if (computerMove === 'stone') {
-				return 'computer'
-			}
-			if (computerMove === 'paper') {
-				return 'user'
+			switch (computerMove) {
+				case 'scissors':
+					return 'draw';
+			
+				case 'stone':
+					return 'computer';
+			
+				case 'paper':
+				return 'user';
 			}
 			break;
 		case 'paper':
-			if (computerMove === 'scissors') {
-				return 'computer';
-			}
-			if (computerMove === 'stone') {
-				return 'user'
-			}
-			if (computerMove === 'paper') {
-				return 'draw';
+			switch (computerMove) {
+				case 'scissors':
+					return 'computer';
+				
+				case 'stone':
+					return 'user';
+				
+				case 'paper':
+					return 'draw';
 			}
 			break;
 		case 'stone':
@@ -68,8 +70,10 @@ function result(userMove, computerMove) {
 					
 				case 'stone':
 					return 'draw';
+
 				case 'scissors':
 					return 'user';
 			}
 	}
+}
 }
