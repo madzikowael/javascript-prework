@@ -36,9 +36,9 @@ function determineComputerMove() {
 	}
 }
 
-function result(playerMove, computerMove) {
-	console.log(playerMove, computerMove);
-	switch (playerMove) {
+function result(userMove, computerMove) {
+	console.log(userMove, computerMove);
+	switch (userMove) {
 		case 'scissors':
 			if (computerMove === 'scissors') {
 				return 'draw';
@@ -58,13 +58,14 @@ function result(playerMove, computerMove) {
 				return 'user'
 			}
 			if (computerMove === 'paper') {
-				return 'draw'
+				return 'draw';
 			}
 			break;
 		case 'stone':
 			switch (computerMove) {
 				case 'paper':
-					return 'computer';
+					return 'computer'; 
+					
 				case 'stone':
 					return 'draw';
 				case 'scissors':

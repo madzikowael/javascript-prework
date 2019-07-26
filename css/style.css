@@ -10,24 +10,39 @@
   -ms-flex-align: center;
       align-items: center;
   position: relative;
+  margin-top: 50px;
 }
 
-.buttons .button {
-  width: 200px;
-  height: 200px;
-  background-color: yellow;
+.buttons span {
   -ms-flex-pack: center;
       justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  color: white;
+  position: absolute;
+  font-size: 26px;
+  font-display: center;
+  padding-top: 160px;
+  padding-left: 50px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+
+.button img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30%;
 }
 
 body {
   background-color: gray;
-}
-
-span {
-  color: #474747;
-  font-size: 26px;
-  text-align: center;
 }
 
 .title {
@@ -36,8 +51,15 @@ span {
   text-align: center;
 }
 
-.fas {
-  background-color: bisque;
-  position: absolute;
+h1 {
+  font-size: 55px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none solid #444444;
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
