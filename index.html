@@ -2,31 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Kamień, papier, nożyce</title>
+	<title>Stone, paper, scissors</title>
 	<link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
 </head>
 <body>
-	<div class="title-of-page">
-		<h1 class="title">Stone, paper, scissors game</h1>
-	</div>
-	<div class="container">
-		<div class="buttons">
-			<div id="scissors" class="button">
-				<span>scissors</span>
-					<img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="200px" width="200px">
-			</div>
-			<div id="stone" class="button">
-				<span>stone</span>
-					<img src="https://images.pexels.com/photos/161702/harmony-relax-rock-moqui-161702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="200px" width="200px">
-			</div>
-			<div id="paper" class="button">
-				<span>paper</span>
-					<img src="https://images.pexels.com/photos/2457278/pexels-photo-2457278.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" height="200px" width="200px">
-					
-			</div>
-		</div>
-		<div id="messages"></div>
-	</div>
+  <header>
+    <h1>Stone, paper, scissors</h1>
+  </header>
+  <section>
+  <div class="score-board">
+    <div id="user-label" class="badge">user</div>
+    <div id="computer-label" class="badge">comp</div>
+    <span id="user-score">0</span>:<span id="comp-score">0</span>
+  </div>
+  <div class="result">
+    <p>Paper wins stone. You win. Congratulations.</p>
+  </div>
+</section>
+  <div class="buttons">
+    <div id="scissors" class="button">
+      <img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" height=100px>
+    </div>
+    <div id="stone" class="button">
+      <img src="https://images.pexels.com/photos/161702/harmony-relax-rock-moqui-161702.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="" height=100px>
+    </div>
+    <div id="paper" class="button">
+      <img src="https://images.pexels.com/photos/2457278/pexels-photo-2457278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" height=100px>
+    </div>
+  </div>
+  <section>
+  <div>
+  <p id="action-message">Make your move.</p>
+  </div>
+  </section>
+
 	<script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>

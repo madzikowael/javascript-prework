@@ -1,79 +1,102 @@
-{
 const scissors = document.getElementById('scissors');
-const paper = document.getElementById('paper');
 const stone = document.getElementById('stone');
-
-scissors.addEventListener('click', function () {
-	let userMove = 'scissors';
-	const computerMove = determineComputerMove();
-	const winner = result(userMove, computerMove);
-	console.log(winner);
-});
-
-paper.addEventListener('click', function () {
-	let userMove = 'paper';
-	const computerMove = determineComputerMove();
-	const winner = result(userMove, computerMove);
-	console.log(winner);
-});
-
-stone.addEventListener('click', function () {
-	let userMove = 'stone';
-	const computerMove = determineComputerMove();
-	const winner = result(userMove, computerMove);
-	console.log(winner);
-});
+const paper = document.getElementById('paper');
+let userScore = 0;
+let computerScore = 0;
+const userScoreSpan = document.getElementById('user-score');
+const computerScoreSpan = document.getElementById('comp-score');
+const scoreBoard = document.querySelector('.score-board');
+const result = document.querySelector('.result p');
+const fieldOfBody = document.querySelector('section'); //its add
+//const unknowMove = document.getElementById.innerHTML('unknowMove'); // its add
 
 function determineComputerMove() {
-	const randomComputerMove = Math.floor(Math.random() * 3 + 1);
-	switch (randomComputerMove) {
-		case 1:
-			return 'scissors';
-		case 2:
-			return 'paper';
-		case 3:
-			return 'stone';
-	}
+  const buttons = ['stone', 'paper', 'scissors'];
+  const randomNumber = Math.floor(Math.random() * 3);
+  //console.log('It is: ' + randomNumber);
+  return buttons[randomNumber];
+}
+//console.log(determineComputerMove());
+
+function win(userMove, computerMove) {
+  userScore++;
+  userScoreSpan.innerHTML = userScore;
+  computerScoreSpan.innerHTML = computerScore;
+  //console.log(userMove);
+  //console.log(computerMove);
+  result.innerHTML = userMove + "  beats  " + computerMove + ". You win!";
+  //console.log('win');
 }
 
-function result(userMove, computerMove) {
-	console.log(userMove, computerMove);
-	switch (userMove) {
-		case 'scissors':
-			switch (computerMove) {
-				case 'scissors':
-					return 'draw';
-			
-				case 'stone':
-					return 'computer';
-			
-				case 'paper':
-				return 'user';
-			}
-			break;
-		case 'paper':
-			switch (computerMove) {
-				case 'scissors':
-					return 'computer';
-				
-				case 'stone':
-					return 'user';
-				
-				case 'paper':
-					return 'draw';
-			}
-			break;
-		case 'stone':
-			switch (computerMove) {
-				case 'paper':
-					return 'computer'; 
-					
-				case 'stone':
-					return 'draw';
+function lose(userMove, computerMove) {
+  computerScore++;
+  userScoreSpan.innerHTML = userScore;
+  computerScoreSpan.innerHTML = computerScore;
+  //console.log(userMove);
+  //console.log(computerMove);
+  result.innerHTML = userMove + "  loses  " + computerMove + ". You lost!";
+  //console.log('lost');
+  
+}
+function draw(userMove, computerMove) {
+  //console.log(userMove);
+  //console.log(computerMove);
+  result.innerHTML = userMove + "  equals  " + computerMove + ". It is a draw!";
+  //console.log('draw');
+}
+function unknowUserMove(userMove, computerMove) { //add
+  result.innerHTML = "Wrong move. Try again. Good Luck."; //add
+  //console.log (unknowUserMove);
+}
 
-				case 'scissors':
-					return 'user';
-			}
-	}
+function playGame(userMove) {
+
+  //console.log('Look at ' + userMove)
+  const computerMove = determineComputerMove();
+  //console.log("user move is.. " + userMove);
+  //console.log("comp move is.. " + computerMove);
+  switch (userMove + computerMove) {
+    case "stonescissors":
+    case "paperstone":
+    case "scissorspaper":
+      win(userMove, computerMove);
+      //console.log("User wins.");
+      break;
+    case "stonepaper":
+    case "scissorsstone":
+    case "paperscissors":
+      //console.log("User lost.");
+      lose(userMove, computerMove);
+      break;
+    case "stonestone":
+    case "paperpaper":
+    case "scissorsscissors":
+      draw(userMove, computerMove);
+     //console.log("It's a draw.");
+      break;
+      default:
+        return unknowUserMove();
+        console.log('it is unknow move' + unknowMove);
+  }
 }
+
+function main() {
+  stone.addEventListener('click', function() {
+    playGame('stone');
+    //console.log('You clicked stone.');
+  })
+  paper.addEventListener('click', function() {
+    playGame('paper');
+    //console.log('You clicked paper.');
+  })
+  scissors.addEventListener('click', function(){
+    playGame('scissors');
+    //console.log('You clicked scissors.');
+  })
+  fieldOfBody.addEventListener('click', function() { //add it
+    playGame('unknowMove'); //add it
+    //console.log('You clicked in body. Unknow move')
+  })
 }
+
+main();
