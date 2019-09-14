@@ -15,6 +15,29 @@ header h1 {
   font-family: "Lacquer", sans-serif;
 }
 
+placeholder {
+  color: black;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+::placeholder {
+  color: black;
+}
+
+.number-rounds {
+  margin: 0 auto;
+  display: block;
+  -ms-flex-pack: center;
+      justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: "Lacquer", sans-serif;
+}
+
 .score-board {
   text-align: center;
   font-size: 36px;

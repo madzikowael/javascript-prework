@@ -8,8 +8,53 @@ const computerScoreSpan = document.getElementById('comp-score');
 const scoreBoard = document.querySelector('.score-board');
 const result = document.querySelector('.result p');
 const fieldOfBody = document.querySelector('section'); //its add
-//const unknowMove = document.getElementById.innerHTML('unknowMove'); // its add
+let maxRounds = 0;
+let minRounds = 0;
+let input = document.getElementById('input');
+const resetGameButton = document.getElementById('reset-game');
+const startGameButton = document.getElementById('start-game');
 
+
+/*choose numbers of round in current game*/
+input.oninput = function(e) {
+  input.addEventListener('keypress', function(evt){
+    let value = input.value;
+      if(input.value > 0  && input.value <= 3){
+        return evt;
+      }
+      else {
+        result.innerHTML = "Wrong number, try again";
+      }
+
+});
+};
+  /* Do play Game for 1 or 2 or 3 rounds */
+let playCompleteGame = function(){
+      
+}
+  //result.innerHTML = 'You choose ' + input.value + ' rounds of game. Let s your move.'; 
+  //if(input > 0 & input <= 3){
+ // result = startGame();
+ // } else {
+ //   result.innerHTML = 'Your move is error. Try again and choose number of rounds beetwen 1-3.';
+//  }
+
+ // console.log('Number of rounds', startGame);
+  
+//};
+/*function startGame(){
+  startGameButton.addEventListener('click', input);
+  if(oninput == 1 ^ oninput == 2 ^ oninput == 3){
+  return main();
+  } else {
+    result.innerHTML = 'Your chose numbers of rounds is wrong. Try again';
+  }
+  console.log('you re clicked start button', startGame);
+}
+*/
+
+
+/* create computer move*/
 function determineComputerMove() {
   const buttons = ['stone', 'paper', 'scissors'];
   const randomNumber = Math.floor(Math.random() * 3);
@@ -17,6 +62,8 @@ function determineComputerMove() {
   return buttons[randomNumber];
 }
 //console.log(determineComputerMove());
+
+/* create chooses who win, lose, and when it;s a draw or unknown move*/
 
 function win(userMove, computerMove) {
   userScore++;
@@ -49,6 +96,8 @@ function unknowUserMove(userMove, computerMove) { //add
   //console.log (unknowUserMove);
 }
 
+/*create launch game*/
+
 function playGame(userMove) {
 
   //console.log('Look at ' + userMove)
@@ -80,6 +129,8 @@ function playGame(userMove) {
   }
 }
 
+/* i can click on images and i can induce a function playGame*/
+
 function main() {
   stone.addEventListener('click', function() {
     playGame('stone');
@@ -100,3 +151,30 @@ function main() {
 }
 
 main();
+
+/*this function must to give me 0:0 on my scoreboard*/
+
+/*resetGameButton = function resetGame(){
+  userScore.innerHTML = 0;
+  computerScore.innerHTML = 0;
+  console.log(resetGame, 'reset gry')
+}*/
+
+//function resetGame(){
+ // resetGameButton.addEventListener('click', resetGame);
+//  result.innerHTML = input == 0;
+ // console.log('reset Game', resetGame);//
+//};
+const form = document.getElementById('placeToWriteNumber');
+form.addEventListener('reset', function(e){
+  const input = document.getElementById('reset-game');
+  const value = input.value;
+  input.value = '';
+  
+});
+
+
+
+
+
+

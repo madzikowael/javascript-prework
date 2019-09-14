@@ -15,6 +15,21 @@ header h1 {
   text-align: center;
   font-family: $font-game;
 }
+placeholder {
+  color: black;
+}
+::placeholder{
+  color: black;
+}
+.number-rounds {
+  margin: 0 auto;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: $font-game;
+}
 .score-board {
   text-align: center;
   font-size: 36px;
