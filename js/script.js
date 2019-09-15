@@ -13,25 +13,55 @@ let minRounds = 0;
 let input = document.getElementById('input');
 const resetGameButton = document.getElementById('reset-game');
 const startGameButton = document.getElementById('start-game');
-
+let value = input.value;
 
 /*choose numbers of round in current game*/
 input.oninput = function(e) {
   input.addEventListener('keypress', function(evt){
-    let value = input.value;
       if(input.value > 0  && input.value <= 3){
         return evt;
       }
       else {
         result.innerHTML = "Wrong number, try again";
       }
+     });
 
-});
 };
-  /* Do play Game for 1 or 2 or 3 rounds */
-let playCompleteGame = function(){
-      
+/* function with 1 or 2 or 3 rounds to play Game*/
+const playCompleteGame = function(){
+   if(value == 1){
+     userScore == 1 && computerScore == 0;
+     return result.innerHTML = "User is winner" + userScore + ': ' + computerScore;
+   } else if(value == 1){
+     userScore == 1 && computerScore == 1;
+     return result.innerHTML = "It s a draw" + userScore + ': ' + computerScore;
+   } else if(value == 1){
+     userScore == 0 && computerScore == 1;
+     return result.innerHTML = "Computer is winner" + userScore + ': ' + computerScore;
+   }
+   if(value == 2){
+     userScore == 2 && computerScore == 0 ^ computerScore == 1;
+     return result.innerHTML = "User is winner" + userScore + ': ' + computerScore;
+   } else if(value == 2){
+     userScore == 1 ^ userScore == 0 && computerScore == 2;
+     return result.innerHTML = "Computer is winner" + userScore + ': ' + computerScore;
+   } else if(value == 2){
+     userScore == 2 && computerScore == 2;
+     return result.innerHTML = "It s a draw" + userScore + ': ' + computerScore;
+   }
+   if(value == 3){
+     userScore == 3 && computerScore == 3;
+     return result.innerHTML = "It s a draw" + userScore + ': ' + computerScore;
+   } else if(value == 3){
+     userScore == 3 && computerScore == 0 ^ computerScore == 1 ^ computerScore == 2;
+     return result.innerHTML = "User is winner" + userScore + ': ' + computerScore;
+   } else if( value == 3){
+     userScore == 0 ^ userScore == 1 ^ userScore == 2 &&  computerScore == 3;
+     return result.innerHTML = "Computer is winner" + userScore + ': ' + computerScore;
+   }
 }
+  /* Do play Game for 1 or 2 or 3 rounds */
+
   //result.innerHTML = 'You choose ' + input.value + ' rounds of game. Let s your move.'; 
   //if(input > 0 & input <= 3){
  // result = startGame();
