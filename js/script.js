@@ -28,7 +28,7 @@ input.oninput = function(e) {
 
 };
 /* function with 1 or 2 or 3 rounds to play Game*/
-const playCompleteGame = function(){
+const playCompleteGame = function(userScore, computerScore){
    if(value == 1){
      userScore == 1 && computerScore == 0;
      return result.innerHTML = "User is winner" + userScore + ': ' + computerScore;
@@ -59,7 +59,8 @@ const playCompleteGame = function(){
      userScore == 0 ^ userScore == 1 ^ userScore == 2 &&  computerScore == 3;
      return result.innerHTML = "Computer is winner" + userScore + ': ' + computerScore;
    }
-}
+   }
+   console.log('play rounds', playGame);
   /* Do play Game for 1 or 2 or 3 rounds */
 
   //result.innerHTML = 'You choose ' + input.value + ' rounds of game. Let s your move.'; 
